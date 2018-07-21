@@ -8,28 +8,35 @@ class PiedPiper::Scraper
   def scrape_teampage
     doc = Nokogiri::HTML(open(self.team_page))
     array =[]
-    doc.css("div.photo.who-we-are-info p")[0..5].each do |p|
+    doc.css("div.section7 div.row-wrapper p")[0..5].each do |p|
     piper_hash = {}
-    piper_hash[:name] = doc.css("div.row-wrapper p").text
-    piper_hash[:photo_url] = doc.css("div.img-photo img").attr("src")
+    piper_hash[:name] = doc.css("div.row-wrapper p").children.first.text
+    piper_hash[:postion] = doc.css("div.row-wrapper i" ).text
     array.push(piper_hash)
     end
     PiedPiper::Piper.create_from_collection(array)
-    binding.pry
-  end
+
+
+    end
+
+  # def scrape_bios
+  #   PiedPiper::Piper.all.each do |piper|
+  #   doc = Nokogiri::HTML(open(piper.url))
+  #
+  #
+  # #   end
+  # end
 
   def scrape
     scrape_teampage
+    # scrape_bios
   end
 
 end
 
-#doc.css("div.row-wrapper p")[0...6].each.methods
-# doc.css("div.section7 h2").text
-# doc.css("div.section7 p i")[0].text.split
 
-# doc.css("div.row-wrapper  i" )[0].text
-# doc.css("div.bio p")[1]
+
 # doc.css("div.row-wrapper p")[0].children.first.text
 # PiedPiper::Piper.all
-#doc.css("div.photo.who-we-are-info p")[0..5].text
+
+# doc.css("div.img-photo img").attr("src")
