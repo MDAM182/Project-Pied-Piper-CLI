@@ -39,6 +39,3 @@ class PiedPiper::Cli
   end
 end
 #
-# doc.css("div.section7 h2").text
-# doc.css("div.row-wrapper p")[0].text
-# doc.css("div.bio p")[1]
