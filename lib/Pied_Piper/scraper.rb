@@ -7,12 +7,18 @@ class PiedPiper::Scraper
 
   def scrape_teampage
     doc = Nokogiri::HTML(open(self.team_page))
+
     array =[]
+    # doc.css('br').each do |br|
+    # br.replace()
+    # end
     doc.css("div.section7 div.row-wrapper p")[0..5].each do |p|
     piper_hash = {}
-    piper_hash[:name] = doc.css("div.row-wrapper p").children.first.text
-    piper_hash[:postion] = doc.css("div.row-wrapper i" ).text
+
+    piper_hash[:name] = doc.css("div.row-wrapper p")[0].children.first.text
+    piper_hash[:postion] = doc.css("div.row-wrapper p i" )[0].text
     array.push(piper_hash)
+    binding.pry
     end
     PiedPiper::Piper.create_from_collection(array)
 
