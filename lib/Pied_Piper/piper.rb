@@ -6,8 +6,6 @@ class PiedPiper::Piper
    hash.each do |key, value|
      self.send("#{key}=", value)
    end
-   self.bio = []
-   self.photo = []
  end
 
  def self.all
