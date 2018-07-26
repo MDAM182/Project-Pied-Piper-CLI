@@ -53,7 +53,7 @@ class PiedPiper::Cli
       list_pipers
     end
 
-    puts "Would you like to meet another piper?  Enter a number Y type EXIT to leave 🙃"
+    puts "Would you like to meet another piper?  Enter a number Y or type EXIT to leave 🙃"
     input = gets.strip
 
     if input.upcase == "Y"
