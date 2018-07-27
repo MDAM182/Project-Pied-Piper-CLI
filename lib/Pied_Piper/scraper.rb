@@ -12,14 +12,14 @@ class PiedPiper::Scraper
 
   doc.css("div.photo.who-we-are-info")[0..5].each do |div|
     piper_hash = {}
-    binding.pry
+
 
     piper_hash[:name] = div.css("p").children.first.text
     piper_hash[:postion] = div.css("i").children.text
     piper_hash[:photo] =  div.css("img").attr("src").text
     # piper_hash[:bio] = div.css("data-bio").value
     array.push(piper_hash)
-    binding.pry
+    # binding.pry
     end
     PiedPiper::Piper.create_from_collection(array)
     end
