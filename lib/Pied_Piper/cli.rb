@@ -43,7 +43,7 @@ class PiedPiper::Cli
     puts "Which piper would you like to know more about? Enter a number 1-6 or type EXIT to leave 🙃"
     input = gets.strip
 
-     if input.to_i > 0
+     if input.to_i > 0 && input.to_i <= PiedPiper::Piper.all.length
        print_info(input)
        piper_info
 
@@ -82,7 +82,6 @@ end
     puts "---------- #{piper.postion} ----------"
 
     puts ""
-    # puts "#{piper.bio}"
     puts ""
 
     puts "Click link to view photo of #{piper.name}:   #{piper.photo}"

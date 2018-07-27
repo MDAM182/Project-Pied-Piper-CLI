@@ -1,6 +1,7 @@
 class PiedPiper::Piper
-  attr_accessor :name, :url, :postion, :bio, :photo
+  attr_accessor :name, :url, :postion, :photo
   @@all = []
+
 
  def initialize(hash)
    hash.each do |key, value|

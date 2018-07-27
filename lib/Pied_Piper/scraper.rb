@@ -17,9 +17,8 @@ class PiedPiper::Scraper
     piper_hash[:name] = div.css("p").children.first.text
     piper_hash[:postion] = div.css("i").children.text
     piper_hash[:photo] =  div.css("img").attr("src").text
-    # piper_hash[:bio] = div.css("data-bio").value
     array.push(piper_hash)
-    # binding.pry
+
     end
     PiedPiper::Piper.create_from_collection(array)
     end
@@ -29,12 +28,3 @@ class PiedPiper::Scraper
   end
 
 end
-# doc.css("div.modal-info-wrapper.photo.who-we-are-info")
-# # doc.css("div.modal-info.bio").text
-# #doc.css("div.data-bio").text
-# # div#data-bio
-# # PiedPiper::Piper.all
-# [#<Nokogiri::XML::Element:0x4f919c name="div" attributes=[#<Nokogiri::XML::Attr:0x977390 name="class" value="photo who-we-a
-# div.css(".photo.who-we-are-info")
-# doc.css(div.modal)
-# doc.css("div.photo.who-we-are-info").attr("data-bio").value
