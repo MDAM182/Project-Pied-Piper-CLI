@@ -26,6 +26,7 @@ class PiedPiper::Cli
       list_pipers
     elsif input.upcase == "EXIT"
       puts "See ya! Happy Programming ✌️"
+
     else
       invalid
       start
@@ -40,20 +41,24 @@ class PiedPiper::Cli
 
     puts ""
     puts "Which piper would you like to know more about? Enter a number 1-6 or type EXIT to leave 🙃"
-    input = gets.strip.to_i
+    input = gets.strip
 
      if input.to_i > 0
        print_info(input)
+       piper_info
 
     elsif input.upcase == "EXIT"
       puts "Live Long and Prosper 🖖"
 
     else
-      invalid
-      list_pipers
+       invalid
+       list_pipers
     end
+  end
 
-    puts "Would you like to meet another piper?  Enter a number Y or type EXIT to leave 🙃"
+    def piper_info
+
+    puts "Would you like to meet another piper?  Enter a Y or type EXIT to leave 🙃"
     input = gets.strip
 
     if input.upcase == "Y"
@@ -62,16 +67,17 @@ class PiedPiper::Cli
       puts ""
       puts "See ya! Happy Programming ✌️"
     else
-
+      invalid
 
     end
 end
 
   def print_info(input)
-    piper = PiedPiper::Piper.all[input - 1]
+    piper = PiedPiper::Piper.all[input.to_i - 1]
 
+    puts ""
     puts "---------- #{piper.name} ----------"
-    #return the input of the number the user entered
+
     puts ""
     puts "---------- #{piper.postion} ----------"
 
@@ -79,7 +85,7 @@ end
     # puts "#{piper.bio}"
     puts ""
 
-    puts "Click link to view photo #{piper.photo}"
+    puts "Click link to view photo of #{piper.name}:   #{piper.photo}"
     puts ""
    end
 

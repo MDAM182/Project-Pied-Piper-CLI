@@ -10,8 +10,9 @@ class PiedPiper::Scraper
 
     array =[]
 
-    doc.css("div.photo.who-we-are-info")[0..5].each do |div|
+  doc.css("div.photo.who-we-are-info")[0..5].each do |div|
     piper_hash = {}
+    binding.pry
 
     piper_hash[:name] = div.css("p").children.first.text
     piper_hash[:postion] = div.css("i").children.text
@@ -35,3 +36,5 @@ end
 # # PiedPiper::Piper.all
 # [#<Nokogiri::XML::Element:0x4f919c name="div" attributes=[#<Nokogiri::XML::Attr:0x977390 name="class" value="photo who-we-a
 # div.css(".photo.who-we-are-info")
+# doc.css(div.modal)
+# doc.css("div.photo.who-we-are-info").attr("data-bio").value
