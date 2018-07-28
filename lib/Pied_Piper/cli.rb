@@ -19,7 +19,7 @@ class PiedPiper::Cli
      puts "Type SV to meet some pipers or"
      puts ""
 
-    puts "Type EXIT to exit program"
+     puts "Type EXIT to leave program"
     puts ""
     input = gets.strip
     if input.upcase == "SV"
