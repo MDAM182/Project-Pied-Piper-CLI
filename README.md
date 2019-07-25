@@ -1,28 +1,18 @@
 # PiedPiper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Pied_Piper`. To experiment with that code, run `bin/console` for an interactive prompt.
+Meet the pipers! cli scraping project
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'Pied_Piper'
-```
+git clone git@github.com:MDAM182/Project-Pied-Piper-CLI.git
 
-And then execute:
+cd into Project-Pied-Piper-CLI
 
-    $ bundle
+open with the specified text editor
 
-Or install it yourself as:
-
-    $ gem install Pied_Piper
-
-## Usage
-
-TODO: Write usage instructions here
+run ruby bin/silicon_valley
 
 ## Development
 
